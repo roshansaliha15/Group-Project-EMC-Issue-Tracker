@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Issues | EMC IssueTracker</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">EMC</span>
+          <span class="brand-sub">IssueTracker</span>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <ul>
+          <li>
+            <a href="#" class="nav-link">
+              <i class="fa-solid fa-house"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link active">
+              <i class="fa-solid fa-list-ul"></i>
+              <span>My Issues</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link">
+              <i class="fa-solid fa-circle-plus"></i>
+              <span>Report an Issue</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span>Track Ticket</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link">
+              <i class="fa-solid fa-circle-question"></i>
+              <span>Help &amp; Guidelines</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <i class="fa-solid fa-leaf"></i>
+        <span>Learn • Report • Resolve</span>
+      </div>
+    </aside>
+
+    <!-- Overlay for mobile sidebar -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ========== MAIN WRAPPER ========== -->
+    <div class="main-wrapper">
+
+      <!-- Top Header -->
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="topbar-actions">
+          <button class="icon-btn notification" aria-label="Notifications">
+            <i class="fa-regular fa-bell"></i>
+            <span class="notification-dot"></span>
+          </button>
+
+          <div class="profile" tabindex="0">
+            <div class="avatar">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <i class="fa-solid fa-chevron-down profile-arrow"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="content">
+
+        <!-- Page Header -->
+        <section class="page-header">
+          <div class="page-icon">
+            <i class="fa-solid fa-list-ul"></i>
+          </div>
+          <div>
+            <h1>My Issues</h1>
+            <p>View all your reported tickets.</p>
+          </div>
+        </section>
+
+        <!-- Issues Card -->
+        <section class="card">
+
+          <!-- Filters -->
+          <form class="filters" id="filterForm" autocomplete="off">
+            <div class="search-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search by Ticket ID..."
+                aria-label="Search by Ticket ID"
+              />
+            </div>
+
+            <div class="select-box">
+              <select id="statusFilter" aria-label="Filter by status">
+                <option value="all">All Status</option>
+                <option value="pending">Pending</option>
+                <option value="in-progress">In Progress</option>
+                <option value="resolved">Resolved</option>
+              </select>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+
+            <button type="submit" class="btn-primary">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span>Search</span>
+            </button>
+          </form>
+
+          <!-- Table -->
+          <div class="table-wrapper">
+            <table class="issues-table" id="issuesTable">
+              <thead>
+                <tr>
+                  <th>Ticket ID</th>
+                  <th>Category</th>
+                  <th>Description</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="issue-row" data-ticket="EMC-1006" data-status="resolved">
+                  <td class="ticket-id">EMC-1006</td>
+                  <td>Login</td>
+                  <td>Unable to login to EMC portal</td>
+                  <td>Nov 16, 2026</td>
+                  <td><span class="badge badge-resolved">Resolved</span></td>
+                </tr>
+                <tr class="issue-row" data-ticket="EMC-1005" data-status="in-progress">
+                  <td class="ticket-id">EMC-1005</td>
+                  <td>Project Status</td>
+                  <td>Submitted project shows 0/1</td>
+                  <td>Nov 15, 2026</td>
+                  <td><span class="badge badge-progress">In Progress</span></td>
+                </tr>
+                <tr class="issue-row" data-ticket="EMC-1004" data-status="pending">
+                  <td class="ticket-id">EMC-1004</td>
+                  <td>Profile</td>
+                  <td>Profile not saving even after update</td>
+                  <td>Nov 14, 2026</td>
+                  <td><span class="badge badge-pending">Pending</span></td>
+                </tr>
+
+                <!-- Empty State -->
+                <tr class="no-results" id="noResults">
+                  <td colspan="5">
+                    <i class="fa-regular fa-folder-open"></i>
+                    <p>No tickets match your search.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Table Footer -->
+          <div class="table-footer">
+            <span id="resultCount">Showing 3 of 3 issues</span>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
