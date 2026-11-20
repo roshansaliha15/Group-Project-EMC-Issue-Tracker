@@ -1,55 +1,16 @@
 
-/* =========================================
-   ROOT VARIABLES
-========================================= */
-
-:root {
-    --purple-dark: #3b1f7a;
-    --purple: #5b2dbf;
-    --purple-hover: #4a22a3;
-    --lavender: #ede7fb;
-    --lavender-soft: #f6f3fd;
-    --white: #ffffff;
-
-    --green: #1f9d55;
-    --green-bg: #e3f6ea;
-    --blue: #2563eb;
-    --blue-bg: #e2ecfd;
-    --orange: #e07b00;
-    --orange-bg: #fff1dc;
-
-    --text-dark: #1f1d2b;
-    --text-muted: #6b6880;
-    --border: #e6e1f3;
-
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 18px;
-
-    --shadow-sm: 0 2px 6px rgba(59, 31, 122, 0.06);
-    --shadow-md: 0 8px 24px rgba(59, 31, 122, 0.08);
-
-    --sidebar-width: 250px;
-    --transition: 0.25s ease;
-}
-
-
-/* =========================================
-   RESET
-========================================= */
-
-*,
-*::before,
-*::after {
+/* BASIC RESET */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* BODY */
 body {
     font-family: "Poppins", sans-serif;
-    background: var(--lavender-soft);
-    color: var(--text-dark);
+    background-color: #F7F4FC;
+    color: #1F1D2B;
     line-height: 1.5;
 }
 
@@ -69,11 +30,7 @@ textarea {
     font-family: inherit;
 }
 
-
-/* =========================================
-   MAIN LAYOUT
-========================================= */
-
+/* MAIN APP */
 .app {
     display: flex;
     min-height: 100vh;
@@ -81,36 +38,29 @@ textarea {
 
 .main-wrapper {
     flex: 1;
-    margin-left: var(--sidebar-width);
+    margin-left: 250px;
     display: flex;
     flex-direction: column;
     min-width: 0;
 }
 
-
-/* =========================================
-   SIDEBAR
-========================================= */
-
+/* SIDEBAR */
 .sidebar {
     position: fixed;
     top: 0;
     left: 0;
-    width: var(--sidebar-width);
+    width: 250px;
     height: 100vh;
-    background: linear-gradient(
-        180deg,
-        var(--purple-dark) 0%,
-        var(--purple) 100%
-    );
-    color: var(--white);
+    background-color: #492466;
+    color: white;
     display: flex;
     flex-direction: column;
     padding: 28px 18px;
     z-index: 100;
-    transition: transform var(--transition);
+    transition: transform 0.25s ease;
 }
 
+/* BRAND */
 .brand {
     display: flex;
     align-items: center;
@@ -121,10 +71,11 @@ textarea {
 .brand-icon {
     width: 46px;
     height: 46px;
-    border-radius: var(--radius-md);
-    background: rgba(255, 255, 255, 0.15);
-    display: grid;
-    place-items: center;
+    border-radius: 12px;
+    background-color: #704093;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 22px;
 }
 
@@ -133,24 +84,24 @@ textarea {
     flex-direction: column;
     line-height: 1.15;
 }
+.brand p{
+    font-size: 12px;
+    line-height: 1.2;
+    color: #E0D2F4;
+    margin-top: 2px;
+}
 
 .brand-title {
     font-size: 20px;
     font-weight: 700;
-    letter-spacing: 1px;
 }
 
 .brand-sub {
     font-size: 13px;
     font-weight: 500;
-    opacity: 0.85;
 }
 
-
-/* =========================================
-   SIDEBAR NAVIGATION
-========================================= */
-
+/* NAVIGATION */
 .nav {
     flex: 1;
 }
@@ -166,11 +117,11 @@ textarea {
     align-items: center;
     gap: 14px;
     padding: 12px 16px;
-    border-radius: var(--radius-md);
-    font-size: 14.5px;
+    border-radius: 12px;
+    font-size: 14px;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.8);
-    transition: background var(--transition), color var(--transition);
+    color: #E8DFF0;
+    transition: background 0.25s ease;
 }
 
 .nav-link i {
@@ -179,64 +130,55 @@ textarea {
     font-size: 16px;
 }
 
-.nav-link:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--white);
-}
-
+.nav-link:hover,
 .nav-link.active {
-    background: var(--white);
-    color: var(--purple);
-    box-shadow: var(--shadow-sm);
+    background-color: #FFFFFF;
+    color: rgb(59, 9, 59);
+    transition: background 0.25s ease;
 }
 
 
-/* =========================================
-   SIDEBAR FOOTER
-========================================= */
-
+/* SIDEBAR FOOTER */
 .sidebar-footer {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     padding: 14px;
-    border-radius: var(--radius-md);
-    background: rgba(255, 255, 255, 0.1);
-    font-size: 12.5px;
+    border-radius: 12px;
+    background-color: #704093;
+    font-size: 12px;
     font-weight: 500;
 }
 
 .sidebar-footer i {
-    color: #9be3b4;
+    color: #9BE3B4;
 }
 
-
-/* =========================================
-   TOP HEADER
-========================================= */
-
+/* TOP HEADER */
 .topbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 18px 36px;
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
+    background-color: white;
+    border-bottom: 1px solid #E6E1F3;
     position: sticky;
     top: 0;
     z-index: 50;
 }
 
+/* MOBILE MENU BUTTON */
 .menu-toggle {
     display: none;
     background: none;
     border: none;
     font-size: 20px;
-    color: var(--purple);
+    color: #492466;
     cursor: pointer;
 }
 
+/* TOP HEADER ACTIONS */
 .topbar-actions {
     display: flex;
     align-items: center;
@@ -250,15 +192,14 @@ textarea {
     height: 42px;
     border: none;
     border-radius: 50%;
-    background: var(--lavender);
-    color: var(--purple);
+    background-color: #EDE7F7;
+    color: #492466;
     font-size: 17px;
     cursor: pointer;
-    transition: background var(--transition);
 }
 
 .icon-btn:hover {
-    background: #e0d6f8;
+    background-color: #E0D6F8;
 }
 
 .notification-dot {
@@ -267,8 +208,8 @@ textarea {
     right: 10px;
     width: 8px;
     height: 8px;
-    background: var(--orange);
-    border: 2px solid var(--white);
+    background-color: #E07B00;
+    border: 2px solid white;
     border-radius: 50%;
 }
 
@@ -283,23 +224,20 @@ textarea {
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--purple), #8b5cf6);
-    color: var(--white);
-    display: grid;
-    place-items: center;
+    background-color: #704093;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 17px;
 }
 
 .profile-arrow {
     font-size: 12px;
-    color: var(--text-muted);
+    color: #6B6880;
 }
 
-
-/* =========================================
-   MAIN CONTENT
-========================================= */
-
+/* MAIN CONTENT */
 .content {
     padding: 32px 36px 48px;
 }
@@ -314,47 +252,37 @@ textarea {
 .page-icon {
     width: 52px;
     height: 52px;
-    border-radius: var(--radius-md);
-    background: var(--lavender);
-    color: var(--purple);
-    display: grid;
-    place-items: center;
+    border-radius: 12px;
+    background-color: #EDE7F7;
+    color: #492466;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 22px;
 }
 
 .page-header h1 {
     font-size: 26px;
     font-weight: 700;
-    color: var(--purple-dark);
+    color: #35194F;
 }
 
 .page-header p {
     font-size: 14px;
-    color: var(--text-muted);
+    color: #6B6880;
 }
 
-
-/* =========================================
-   CONTENT CARD
-========================================= */
-
+/* CONTENT CARD */
 .card {
-    background: var(--white);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
+    background-color: white;
+    border-radius: 18px;
     padding: 26px;
 }
 
-
-/* =========================================
-   REPORT ISSUE FORM
-========================================= */
-
+/* REPORT ISSUE FORM */
 #issueForm {
     max-width: 750px;
 }
-
-/* Form labels */
 
 #issueForm label {
     display: block;
@@ -362,290 +290,58 @@ textarea {
     margin-bottom: 8px;
     font-size: 14px;
     font-weight: 600;
-    color: var(--text-dark);
+    color: #1F1D2B;
 }
-
-/* Category dropdown and description */
 
 #issueForm select,
 #issueForm textarea {
     display: block;
     width: 100%;
     padding: 12px 16px;
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius-md);
+    border: 1px solid #E6E1F3;
+    border-radius: 12px;
     font-size: 14px;
-    font-family: inherit;
-    background: var(--lavender-soft);
-    color: var(--text-dark);
+    background-color: #F7F4FC;
+    color: #1F1D2B;
     outline: none;
 }
 
-/* Focus effect */
-
 #issueForm select:focus,
 #issueForm textarea:focus {
-    border-color: var(--purple);
-    background: var(--white);
-    box-shadow: 0 0 0 4px rgba(91, 45, 191, 0.12);
+    border-color: #492466;
+    background-color: white;
 }
-
-/* Description textarea */
 
 #issueForm textarea {
     resize: vertical;
     min-height: 140px;
 }
 
-/* Submit button */
-
 #issueForm button {
     margin-top: 22px;
     padding: 12px 26px;
     border: none;
     border-radius: 50px;
-    background: var(--purple);
-    color: var(--white);
+    background-color: #492466;
+    color: white;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
-    transition: background var(--transition);
 }
 
 #issueForm button:hover {
-    background: var(--purple-hover);
+    background-color: #704093;
 }
 
-
-/* =========================================
-   SEARCH AND FILTER STYLES
-   (Preserved for My Issues page)
-========================================= */
-
-.filters {
-    display: flex;
-    gap: 14px;
-    margin-bottom: 24px;
-    flex-wrap: wrap;
-}
-
-.search-box {
-    flex: 1;
-    min-width: 220px;
-    position: relative;
-}
-
-.search-box i {
-    position: absolute;
-    left: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-muted);
-    font-size: 14px;
-}
-
-.search-box input {
-    width: 100%;
-    padding: 12px 16px 12px 42px;
-    border: 1.5px solid var(--border);
-    border-radius: 50px;
-    font-size: 14px;
-    background: var(--lavender-soft);
-    color: var(--text-dark);
-    outline: none;
-    transition: border-color var(--transition), box-shadow var(--transition);
-}
-
-.search-box input:focus {
-    border-color: var(--purple);
-    background: var(--white);
-    box-shadow: 0 0 0 4px rgba(91, 45, 191, 0.12);
-}
-
-.select-box {
-    position: relative;
-    min-width: 170px;
-}
-
-.select-box select {
-    width: 100%;
-    appearance: none;
-    -webkit-appearance: none;
-    padding: 12px 40px 12px 18px;
-    border: 1.5px solid var(--border);
-    border-radius: 50px;
-    font-size: 14px;
-    background: var(--lavender-soft);
-    color: var(--text-dark);
-    cursor: pointer;
-    outline: none;
-    transition: border-color var(--transition), box-shadow var(--transition);
-}
-
-.select-box select:focus {
-    border-color: var(--purple);
-    background: var(--white);
-    box-shadow: 0 0 0 4px rgba(91, 45, 191, 0.12);
-}
-
-.select-box i {
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 12px;
-    color: var(--text-muted);
-    pointer-events: none;
-}
-
-.btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 26px;
-    border: none;
-    border-radius: 50px;
-    background: var(--purple);
-    color: var(--white);
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 6px 16px rgba(91, 45, 191, 0.25);
-    transition: background var(--transition), transform var(--transition);
-}
-
-.btn-primary:hover {
-    background: var(--purple-hover);
-    transform: translateY(-1px);
-}
-
-.btn-primary:active {
-    transform: translateY(0);
-}
-
-
-/* =========================================
-   ISSUES TABLE
-   (Preserved for My Issues page)
-========================================= */
-
-.table-wrapper {
-    overflow-x: auto;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-}
-
-.issues-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 680px;
-}
-
-.issues-table thead {
-    background: var(--lavender);
-}
-
-.issues-table th {
-    text-align: left;
-    padding: 15px 20px;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--purple-dark);
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-}
-
-.issues-table td {
-    padding: 16px 20px;
-    font-size: 14px;
-    color: var(--text-dark);
-    border-top: 1px solid var(--border);
-}
-
-.issue-row {
-    transition: background var(--transition);
-}
-
-.issue-row:hover {
-    background: var(--lavender-soft);
-}
-
-.ticket-id {
-    font-weight: 600;
-    color: var(--purple);
-}
-
-
-/* =========================================
-   STATUS BADGES
-========================================= */
-
-.badge {
-    display: inline-block;
-    padding: 6px 14px;
-    border-radius: 50px;
-    font-size: 12.5px;
-    font-weight: 600;
-    white-space: nowrap;
-}
-
-.badge-resolved {
-    background: var(--green-bg);
-    color: var(--green);
-}
-
-.badge-progress {
-    background: var(--blue-bg);
-    color: var(--blue);
-}
-
-.badge-pending {
-    background: var(--orange-bg);
-    color: var(--orange);
-}
-
-
-/* =========================================
-   EMPTY STATE
-========================================= */
-
-.no-results {
-    display: none;
-}
-
-.no-results td {
-    text-align: center;
-    padding: 40px 20px;
-    color: var(--text-muted);
-}
-
-.no-results i {
-    font-size: 32px;
-    color: #c4b5f0;
-    margin-bottom: 10px;
-}
-
-
-/* =========================================
-   TABLE FOOTER
-========================================= */
-
-.table-footer {
-    margin-top: 16px;
-    font-size: 13px;
-    color: var(--text-muted);
-}
-
-
-/* =========================================
-   MOBILE OVERLAY
-========================================= */
-
+/* MOBILE SIDEBAR OVERLAY */
 .overlay {
     display: none;
     position: fixed;
-    inset: 0;
-    background: rgba(31, 29, 43, 0.45);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(31, 29, 43, 0.45);
     z-index: 90;
 }
 
@@ -653,13 +349,8 @@ textarea {
     display: block;
 }
 
-
-/* =========================================
-   RESPONSIVE DESIGN
-========================================= */
-
+/* RESPONSIVE DESIGN */
 @media (max-width: 900px) {
-
     .sidebar {
         transform: translateX(-100%);
     }
@@ -684,20 +375,6 @@ textarea {
 }
 
 @media (max-width: 560px) {
-
-    .filters {
-        flex-direction: column;
-    }
-
-    .select-box,
-    .btn-primary {
-        width: 100%;
-    }
-
-    .btn-primary {
-        justify-content: center;
-    }
-
     .card {
         padding: 18px;
     }
