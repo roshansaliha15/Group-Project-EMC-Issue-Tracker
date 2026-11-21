@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Report an Issue | EMC IssueTracker</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="reportissue.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <div class="brand-text">
+                <span class="brand-title">EMC</span>
+                <span class="brand-sub">IssueTracker</span>
+                <p>Student Issue<br>Reporting System</p>
+            </div>
+        </div>
+
+        <nav class="nav">
+            <ul>
+                <li>
+                    <a href="#" class="nav-link">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="my-issues.html" class="nav-link">
+                        <i class="fa-solid fa-list-ul"></i>
+                        <span>My Issues</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="reportissue.html" class="nav-link active">
+                        <i class="fa-solid fa-circle-plus"></i>
+                        <span>Report an Issue</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="nav-link">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>Track Ticket</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="nav-link">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <span>Help &amp; Guidelines</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <span>Learn • Report • Resolve</span>
+        </div>
+
+    </aside>
+
+    <!-- MOBILE OVERLAY -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- MAIN WRAPPER -->
+    <div class="main-wrapper">
+
+        <!-- TOP HEADER -->
+        <header class="topbar">
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+             <div class="topbar-actions">
+            <button class="icon-btn notification" aria-label="Notifications">
+                <i class="fa-regular fa-bell"></i>
+                <span class="notification-dot"></span>
+            </button>
+
+            <div class="profile" tabindex="0">
+                <div class="avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <i class="fa-solid fa-chevron-down profile-arrow"></i>
+            </div>
+        </div>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+
+            <section class="page-header">
+                <div>
+                    <h1>Report an Issue</h1>
+                    <p>Describe your issue and submit it.</p>
+                </div>
+            </section>
+
+            <section class="card" id="report-issue">
+
+                <form id="issueForm">
+
+                    <label for="issueCategory">Issue Category</label>
+
+                    <select id="issueCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="Profile">Profile</option>
+                        <option value="Project">Project</option>
+                        <option value="Login">Login</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label for="issueDescription">Issue Description</label>
+
+                    <textarea
+                        id="issueDescription"
+                        placeholder="Please describe your issue in detail..."
+                        rows="6"
+                        required></textarea>
+
+                    <button type="submit">Submit Issue</button>
+
+                </form>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+<script src="reportissue.js"></script>
+
+</body>
+</html>
