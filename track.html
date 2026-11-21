@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMC IssueTracker | Track Ticket</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <h2>EMC<br>IssueTracker</h2>
+                <p>Student Issue Reporting System</p>
+            </div>
+
+            <nav class="navigation">
+
+                <a href="index.html" class="nav-link">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="my-issues.html" class="nav-link">
+                    <i class="fa-solid fa-list"></i>
+                    <span>My Issues</span>
+                </a>
+
+                <a href="report.html" class="nav-link">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    <span>Report an Issue</span>
+                </a>
+
+                <a href="track.html" class="nav-link active">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Track Ticket</span>
+                </a>
+
+                <a href="help-guidelines.html" class="nav-link">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>Help & Guidelines</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>Learn · Report · Resolve</p>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <div class="page-heading">
+                <h1>Track Ticket</h1>
+                <p>Track your reported issue and check its current status.</p>
+            </div>
+
+
+            <!-- Track Form -->
+            <div class="track-container">
+
+                <div class="track-icon">
+                    <i class="fa-solid fa-ticket"></i>
+                </div>
+
+                <h2>Track Your Issue</h2>
+
+                <p>Enter your ticket ID below to check your issue status.</p>
+
+                <form id="trackForm">
+
+                    <div class="form-group">
+
+                        <label for="ticketId">Ticket ID</label>
+
+                        <input type="text" id="ticketId"
+                            placeholder="Enter your ticket ID"
+                            required>
+
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        Track Ticket
+                    </button>
+
+                </form>
+
+                <div id="ticketResult"></div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EMC IssueTracker | Track Ticket</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="reportissue.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <div class="brand-text">
+                <span class="brand-title">EMC</span>
+                <span class="brand-sub">IssueTracker</span>
+                <p>Student Issue<br>Reporting System</p>
+            </div>
+        </div>
+
+        <nav class="nav">
+            <ul>
+                <li>
+                    <a href="index.html" class="nav-link">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="my-issues.html" class="nav-link">
+                        <i class="fa-solid fa-list-ul"></i>
+                        <span>My Issues</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="reportissue.html" class="nav-link">
+                        <i class="fa-solid fa-circle-plus"></i>
+                        <span>Report an Issue</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="track.html" class="nav-link active">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>Track Ticket</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="nav-link">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <span>Help &amp; Guidelines</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <span>Learn • Report • Resolve</span>
+        </div>
+
+    </aside>
+
+    <!-- MOBILE OVERLAY -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- MAIN WRAPPER -->
+    <div class="main-wrapper">
+
+        <!-- TOP HEADER -->
+        <header class="topbar">
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="topbar-actions">
+
+                <button class="icon-btn notification" aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="profile" tabindex="0">
+                    <div class="avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <i class="fa-solid fa-chevron-down profile-arrow"></i>
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+
+            <section class="page-header">
+                <div>
+                    <h1>Track Ticket</h1>
+                    <p>Track your reported issue and check its current status.</p>
+                </div>
+            </section>
+
+            <section class="card">
+
+                <div class="track-icon">
+                    <i class="fa-solid fa-ticket"></i>
+                </div>
+
+                <h2>Track Your Issue</h2>
+
+                <p>Enter your ticket ID below to check your issue status.</p>
+
+                <form id="trackForm">
+
+                    <label for="ticketId">Ticket ID</label>
+
+                    <input
+                        type="text"
+                        id="ticketId"
+                        placeholder="Enter your ticket ID"
+                        required>
+
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        Track Ticket
+                    </button>
+
+                </form>
+
+                <div id="ticketResult"></div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+<script src="track.js"></script>
+
+</body>
+</html>
