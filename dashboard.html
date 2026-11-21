@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMC IssueTracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon"><i class="fa-solid fa-graduation-cap" style="color: rgb(255, 252, 252);"></i>
+                </div>
+                <h2>EMC<br>IssueTracker</h2>
+                <p>Student Issue Reporting System</p>
+            </div>
+
+            <nav class="navigation">
+                <a href="dashboard.html" class="nav-link active"><i class="fa-solid fa-house"
+                        style="color: rgb(255, 252, 252);"></i> <span>Dashboard</span></a>
+                <a href="my-issues.html" class="nav-link"><i class="fa-solid fa-list"
+                        style="color: rgb(255, 252, 252);"></i><span>My Issues</span></a>
+                <a href="reportissue.html" class="nav-link"><i class="fa-solid fa-circle-plus"
+                        style="color: rgb(255, 252, 252);"></i> <span>Report an Issue</span></a>
+                <a href="#" class="nav-link"><i class="fa-solid fa-magnifying-glass"
+                        style="color: rgb(255, 252, 252);"></i><span>Track Ticket</span></a>
+                <a href="help-guidelines.html" class="nav-link"><i class="fa-solid fa-circle-info"
+                        style="color: rgb(255, 252, 252)"></i> <span>Help & Guidelines</span></a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>Learn · Report · Resolve</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Bar -->
+            <header class="topbar">
+                <input type="search" placeholder="Search ticket ID..." aria-label="Search ticket ID">
+
+                <div class="topbar-actions">
+                    <button class="icon-button" aria-label="Notifications"><i class="fa-solid fa-bell"></i></button>
+                    <div class="profile-icon"><i class="fa-solid fa-circle-user"></i></div>
+                </div>
+            </header>
+
+            <!-- Dashboard Heading -->
+            <section class="dashboard-heading">
+                <div>
+                    <h1>Issue Dashboard</h1>
+                    <p>Track and manage your EMC portal issues in one place.</p>
+                </div>
+
+                <a href="reportissue.html"><button class="primary-button"> <i class="fa-solid fa-circle-plus"></i>
+                        Report an Issue</button>
+            </section></a>
+
+            <!-- Statistics Cards -->
+            <section class="stats-grid">
+
+                <article class="stat-card total">
+                    <div class="stat-icon"><i class="fa-solid fa-ticket"></i></div>
+                    <h3>Total Issues</h3>
+                    <p class="stat-number">6</p>
+                </article>
+
+                <article class="stat-card pending">
+                    <div class="stat-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+                    <h3>Pending</h3>
+                    <p class="stat-number">2</p>
+                </article>
+
+                <article class="stat-card progress">
+                    <div class="stat-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+                    <h3>In Progress</h3>
+                    <p class="stat-number">2</p>
+                </article>
+
+                <article class="stat-card resolved">
+                    <div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div>
+                    <h3>Resolved</h3>
+                    <p class="stat-number">2</p>
+                </article>
+
+            </section>
+
+            <!-- Recent Issues -->
+            <section class="issues-section">
+
+                <div class="section-heading">
+                    <h2> <i class="fa-solid fa-clipboard-list"></i> Recent Issues</h2>
+                    <a href="#">View All <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ticket ID</th>
+                                <th>Category</th>
+                                <th>Issue Description</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="quick-actions">
+                <h2>Quick Actions</h2>
+
+                <a href="reportissue.html">
+                    <div class="action-grid">
+                        <div class="action-card">
+                            <span><i class="fa-solid fa-plus"></i></span>
+
+                            <div>
+                                <h3>Report an Issue</h3>
+                                <p>Submit a new issue</p>
+                            </div>
+
+                        </div>
+                </a>
+
+                <a href="track.html">
+                    <div class="action-card">
+                        <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <div>
+                            <h3>Track Ticket</h3>
+                            <p>Check status by ID</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="help-guidelines.html">
+                <div class="action-card">
+                    <span><i class="fa-solid fa-circle-info"></i></span>
+                    <div>
+                        <h3>Help & Guidelines</h3>
+                        <p>Learn how to report</p>
+                    </div>
+                </div>
+                </a>
+    </div>
+    </section>
+
+    </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
